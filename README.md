@@ -22,7 +22,7 @@ For each timestep $t$:
 3. Triangulate 3D points (`cv2.triangulatePoints`) using the accepted matches.
 4. If $t=0$, stop here and continue to the next loop iteration.
 5. Match triangulated keypoints in the left camera at timestep $t-1$ to keypoints in the left camera at timestep $t$.  Since each triangulated keypoint has an associated 3D point, you now have a matching between 3D points at timestep $t-1$ and 2D keypoints at timestep $t$.
-6. Use these 3D-2D matches in PnP RANSAC (`cv2.solvePnPRansac`) with an inliers threshold of 2 pixels.  The result is the transformation $T_{t-1}^{t}$.
+6. Use these 3D-2D matches in PnP RANSAC (`cv2.solvePnPRansac`) with an inlier threshold of 2 pixels.  The result is the transformation $T_{t-1}^{t}$.
 7. Invert this transformation (`np.linalg.inv`) to get $T_{t}^{t-1}$.
 7. Compose the current transformation with the previous transformation (`np.matmul`) to obtain the pose of the current camera with respect to the first camera: $T_{t}^{0}=T_{t-1}^{0}T_{t}^{t-1}$.
 
