@@ -31,6 +31,7 @@ For each timestep $t$:
 #### 
 1. Implement the visual odometry system as described above.
 2. Plot the X-Z coordinates of the camera centers estimated by your VO system and from the ground truth.  Your plot should look like this:
+
 ![plot of visual odometry results](media/vo_result.png)
 
 ## Report
